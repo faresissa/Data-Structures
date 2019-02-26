@@ -1,2 +1,3 @@
 # Data-Structures
-Data structures programming assignments. Transferred from private GitHub account.
+### Fares Issa
+This respository holds all the submitted assignments from my data structures programming course. These files have been transferred from a private GitHub account.
