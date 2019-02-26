@@ -1,0 +1,140 @@
+------------------------------------------------------------------------------------
+CIS*2520 - Assignment 4
+Fares Issa - issaf
+0925274
+November 26th, 2018
+------------------------------------------------------------------------------------
+* Execution of program
+----------------------
+This program can be run using the makefile attached.
+
+command line input: 
+make
+
+command line input:
+./avltree
+------------------------------------------------------------------------------------
+* Cleaning up of file
+------------------------------------------------------------------------------------
+This file system can be cleaned using the makefile attached.
+
+command line input:
+make clean
+>rm avltree
+
+------------------------------------------------------------------------------------
+* Limitations
+------------------------------------------------------------------------------------
+The input string that reads and handles the file was made to be 10,001 characters long.
+If the data file is larger, it will produce output that is not expected, such as
+not finding words that should be found, the size of the tree being incorrect, creating
+new words and nodes on those respective nodes.
+
+Sometimes if the user purposely attempts to give bad input such as skipping instructions,
+or purposely inputting invalid results, the program sometimes does run in an undesired way
+such as infinitely looping through the menu options.
+
+If the user attempts to use options: 2, 5, or 6 before option 1, the program will cause a
+segmentation fault and crash. Although this is a limitation, it is an expected result.
+
+------------------------------------------------------------------------------------
+* Question #1
+------------------------------------------------------------------------------------
+The premise of this program is to take input from a user specified data file that
+must be named "A4_data_f18.txt" in order to run, where the strings provided are used 
+as keys and then an AVL tree is created using these keys. Once parsed, the program can 
+execute commands such as finding, inserting, removing, checking the height and the
+size and finding nodes corresponding to a specific frequency (>= that frequency). The 
+overall function of the program is to take in potentially more than one key (ex. flr109), 
+with a frequency count as to how many times it appears in the file. Once put into a tree, 
+this should correspond to ONE node with that respective count.
+
+It was assumed that the menu option 5 size corresponds to the number of nodes.
+
+Sample program output:
+
+Choose a number betwen 1-7 to execute the respective action.
+1. Initialization.
+2. Find.
+3. Insert.
+4. Remove.
+5. Check Height and Size.
+6. Find All (above a given frequency).
+7. Exit.
+avl/> 1
+
+Choose a number betwen 1-7 to execute the respective action.
+1. Initialization.
+2. Find.
+3. Insert.
+4. Remove.
+5. Check Height and Size.
+6. Find All (above a given frequency).
+7. Exit.
+avl/> 5
+height: 12, size: 1483
+
+Choose a number betwen 1-7 to execute the respective action.
+1. Initialization.
+2. Find.
+3. Insert.
+4. Remove.
+5. Check Height and Size.
+6. Find All (above a given frequency).
+7. Exit.
+avl/> 6
+frequency: 200
+key: flr351, frequency: 398
+key: wrn2, frequency: 1011
+key: wrn385, frequency: 265
+key: wrn477, frequency: 380
+key: wrn69, frequency: 893
+key: wrn96, frequency: 394
+key wrn99, frequency: 306
+
+Choose a number betwen 1-7 to execute the respective action.
+1. Initialization.
+2. Find.
+3. Insert.
+4. Remove.
+5. Check Height and Size.
+6. Find All (above a given frequency).
+7. Exit.
+avl/> 3
+insert key: flr1
+
+Choose a number betwen 1-7 to execute the respective action.
+1. Initialization.
+2. Find.
+3. Insert.
+4. Remove.
+5. Check Height and Size.
+6. Find All (above a given frequency).
+7. Exit.
+avl/> 2
+find key: flr1
+key: flr1, frequency: 1
+
+Choose a number betwen 1-7 to execute the respective action.
+1. Initialization.
+2. Find.
+3. Insert.
+4. Remove.
+5. Check Height and Size.
+6. Find All (above a given frequency).
+7. Exit.
+avl/> 4
+remove key: flr1
+key: flr1, frequency: 0
+
+Choose a number betwen 1-7 to execute the respective action.
+1. Initialization.
+2. Find.
+3. Insert.
+4. Remove.
+5. Check Height and Size.
+6. Find All (above a given frequency).
+7. Exit.
+avl/> 7
+
+>Terminated program.

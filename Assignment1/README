@@ -1,0 +1,94 @@
+CIS*2520 - Assignment 1
+Fares Issa - issaf
+0925274
+September 24th, 2018
+************************
+
+* Execution of program
+----------------------
+This program can be run using the makefile attached.
+
+command line input: 
+make
+./main
+
+* Selection options
+-------------------
+Program #1) Prints out every single permutation of the string provided in "main.c",
+			in this instance, "CARBON"
+
+command line input:
+>Which question would you like to select?
+>1. Carbon?
+>2. Ackermann?
+>3. Newton's method
+>4. Exit.
+>
+>Please select an option:
+1
+>
+>
+>CARBON
+>CARBNO
+>CAROBN
+>...
+------------------------------------------------------------------------------------
+Program #2) This program will ask you to input two numbers, 'm' and 'n'.
+			These will be parameters accepted by "ackermann.c" which recursively
+			calls itself and returns a value that corresponds to the following 
+			definitions:
+			A(0, n) = n + 1					for n >= 0
+			A(m, 0) = A(m - 1, 1)			for m > 0
+			A(m, n) = A(m - 1, A(m, n -1))	for m, n > 0
+			The maximum accepted input by this function is A(3,14). The program
+			will restart if a value greater than A(3,14) is inputted. A message is
+			shown to the user.
+
+command line input:
+>Which question would you like to select?
+>1. Carbon?
+>2. Ackermann?
+>3. Newton's method
+>4. Exit.
+>
+>Please select an option:
+2
+>
+>
+>Enter a value for m:
+3
+>Enter a value for n:
+4
+>A(3,4) = 125.
+------------------------------------------------------------------------------------
+Program #3) This program will calculate the square root of x by Newton's method.
+			Initial approximations of 'a' are calculated as seen in the lab handout.
+
+command line input:
+>Which question would you like to select?
+>1. Carbon?
+>2. Ackermann?
+>3. Newton's method>
+>4. Exit.
+>
+>Please select an option:
+3
+>
+>
+>Which Newton program would you like to execute?
+>1. Recursive.
+>2. Non-recursive.
+1
+>Enter a value for x:
+144
+>Enter a value for e:
+0.000001
+>Approximate square root is: 12.000000.
+
+* Clean up
+-----------
+make clean
+
+
+
+

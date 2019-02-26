@@ -1,0 +1,149 @@
+------------------------------------------------------------------------------------
+CIS*2520 - Assignment 2
+Fares Issa - issaf
+0925274
+October 14th, 2018
+------------------------------------------------------------------------------------
+* Execution of program
+----------------------
+This program can be run using the makefile attached.
+
+command line input: 
+make
+./q1
+
+command line input:
+./q2 (POSTFIX EXPRESSION HERE)  note: SEE "Question #2" FOR FURTHER INFORMATION)
+------------------------------------------------------------------------------------
+* Cleaning up of file
+------------------------------------------------------------------------------------
+This file system can be cleaned using the makefile attached.
+
+command line input:
+make clean
+
+------------------------------------------------------------------------------------
+* Question #1
+------------------------------------------------------------------------------------
+Statement - Program that creates 3 linked lists that are maintained for a car rental
+company. Program allows several types of transactions to be applied to the data which
+include: available for rent, rented, and repaired cars.
+
+Program driver is self explanatory through various user prompts and options to quit 
+or view list in order to confirm a transaction has been accounted for.
+
+Below is a sample run-through of program.
+
+command line input:
+
+>Please select one of the options below.
+>1. Add a new car to the available-for-rent list.
+>2. Add a returned car to the available-for-rent list.
+>3. Add a returned car to the repair list.
+>4. Transfer a car from the repair list to the available-for-rent list.
+>5. Rent the first available car.
+>6. Print all the lists.
+>7. Quit.
+>Please select an option: 1
+>Please enter a mileage: 45000
+>Please enter a license plate: README
+>The new car has been added to the list.
+>
+>Please select one of the options below.
+>1. Add a new car to the available-for-rent list.
+>2. Add a returned car to the available-for-rent list.
+>3. Add a returned car to the repair list.
+>4. Transfer a car from the repair list to the available-for-rent list.
+>5. Rent the first available car.
+>6. Print all the lists.
+>7. Quit.
+>Please select an option: 6
+>Mileage: 400
+>License Plate: MILES
+>Return Date: 0
+>Type: 0
+> ...
+> ...
+>Mileage: 45000
+>License Plate: README
+>Return Date: 0
+>Type: 0
+> ...
+> ...
+>Please select one of the options below.
+>1. Add a new car to the available-for-rent list.
+>2. Add a returned car to the available-for-rent list.
+>3. Add a returned car to the repair list.
+>4. Transfer a car from the repair list to the available-for-rent list.
+>5. Rent the first available car.
+>6. Print all the lists.
+>7. Quit.
+>Please select an option: 2
+>Please enter a mileage: 200105
+>Please enter a license plate: LEXUS
+>The rate for this trip is: $40.75.
+>The returned car has been re-added to the list.
+>
+>Please select one of the options below.
+>1. Add a new car to the available-for-rent list.
+>2. Add a returned car to the available-for-rent list.
+>3. Add a returned car to the repair list.
+>4. Transfer a car from the repair list to the available-for-rent list.
+>5. Rent the first available car.
+>6. Print all the lists.
+>7. Quit.
+>Please select an option: 7
+>The total income from the current session is: $40.75.
+
+
+As one can tell. The program is very straight forward to use. Something to note, this
+program DOES NOT sort by date. This was not implemented.
+------------------------------------------------------------------------------------
+Question #2
+------------------------------------------------------------------------------------
+Statement - An expression in postfix form can be written as if you are adding each
+number and operand on a stack, so if you want to execute said expression the first 
+operator in the expression is found first, and then the previous two inputs are popped
+from the stack and operated upon and the cycle continues.
+
+For example. If I were to calculate (4+4)*5. My stack would look like.
+4
+4
++
+5
+*
+Where my first operand is a +, so I pop the top 2 elements of the stack and do
+that operation. My stack will now look like:
+8
+5
+*
+Now my next operand is a *, so I pop the top 2 elements of the stack and do that 
+operation. My stack now look like:
+40
+
+Therefore, in postfix notation, I would write this as: 44+5* 
+
+This code written in q2.c is modified from an ENGG3640 lab previously done this
+year which explores the Reverse Polish Notation (RPN).
+
+Program limitations include: Only being able to calculate for each individual integer 
+value of 0-9. Ex. cannot execute (19+4)*(1+1) as 194+11+* as this would execute the 
+(9 + 4) then (1+1) then multiply the two to give 26.00. As this program has been 
+implemented using a linked list and NOT a stack. The explanation above simplifies 
+the problem as it is easiest understood through a stack.
+
+
+command line input:
+
+./q2 33+
+>6.00
+>
+./q2 44+5*
+>40.00
+>
+./q2 12+53-*
+>6.00
+>
+
+
+
